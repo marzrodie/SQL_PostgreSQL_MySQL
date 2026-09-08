@@ -1,8 +1,8 @@
 # Introduction
 
-Dive into the data job market! Focusing on the Data Analyst roles, this project explores top-paying jobs, in-demand skills, and where high demand meets high salary in data analytics.
+Get an overview of the Data job market! Mainly focusing on the Data Analyst roles, this project highlights the top-paying jobs, skills that are in demand, and the raltionship between demand and salary in Data analytics.
 
-SQL queries? Check them out here: [project_sql_folder](/project_sql/).
+You can find the SQL queriesi used here: [project_sql_folder](/project_sql/).
 
 # Background
 
