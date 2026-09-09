@@ -6,7 +6,7 @@ You can find the SQL queriesi used here: [project_sql_folder](/project_sql/).
 
 # Background
 
-Driven by a request to navigate the data analyst job market more effectively, this project was born from a desire to pinpoint top-paid and in-demand skills, streamlining others work to find optimal jobs.
+This project examines the Data analyst job market to identify which skills pay the most and appear most in postings, making it easier for job seekers to focus their efforts
 
 ### The questions I wanted to answer through my SQL queries were:
 
@@ -18,21 +18,21 @@ Driven by a request to navigate the data analyst job market more effectively, th
 
 # Tools i used
 
-For my deep dive into the data analyst job market, I harnessed the power of several key tools:
+This analysis of the Data analyst job market was built witht he following tools:
 
-1. **SQL:** The backbone of this analysis, allowing me to query the database and unearth critical insights.
-2. **PostgresSQL:** The chosen database management system, ideal for handling the job posting data
-3. **Visual Studio Code:** My go-to for the database management and executing SQL queries.
-4. **Git and GitHub:** Essential for version control and sharing my SQL scripts and analysis, ensuring collaboration and project tracking.
+1. **SQL:** Queried the dataset and produced every insight below.
+2. **PostgresSQL:** Stored and served the job posting data.
+3. **Visual Studio Code:** The editor of choice for database management and query execution.
+4. **Git and GitHub:** For version control and public hosting for scripts.
 
 # The Analysis
 
-Each query for this project aimed at investigating specific aspects of the data analyst job market.
-Here is how I approached each question:
+Each query in this project investigates a specific aspect of the data analyst job market.
+Here is how i approached each question:
 
 ### 1. Top Paying Data Analyst jobs
 
-To identify the highest-paying roles, I filtered Data Analyst positions by average yearly salary and location, focusing on remote jobs. This query highlights the high paying opportunities in the field.
+To find the highest paying roles, i filtered data analyst positions by average yearly salary and location, focusing on remote work. This query surfaces the most lucrative opportuities in the field.
 
 ```sql
 SELECT
@@ -57,17 +57,17 @@ LIMIT 10
 
 Here is the breakdown of the top data analyst jobs in 2023:
 
-1. **Wide Salary Range:** Top 10 paying data analyst roles span from $184,000 to $650,000 indicating significant salary potential in the field.
-2. **Diverse Employers:** Companies like Meta and AT&T are among those offering high salaries, showing a broad interest across different industries.
-3. **Job Title Variety:** There is a high diversity in the job titles, from Data Analyst to Director of Analytics, reflecting varied roles and specializations within data analytics.
+1. **Salaries vary widely:** The ten highest paying Data analyst roles span $184,000 to $650,000, showing the real earning potential in the field.
+2. **Employers are spread across industries:** Companies including Meta and AT&T offer top salaries, pointing to demand across several industries.
+3. **Titles vary just as much:** Roles range fromData analyst to Director of analytics, reflecting the range of specialisations within the Data.
 
 ![Top 10 highest paying remote jobs in Data Analysis](Assests/Top_10_highest_paying_remote_Data_Analyst_2.png)
 
-*The bar graph visualizing the salary for the top 10 salaries for Data Analyst;  Claude generated this graph from my SQL query results*
+*Bar graph of the top ten salaries for Data analyst roles. Claude generated this chart from my SQL query results*
 
 ### 2. Skills for Top Paying Jobs
 
-To understand what skills are required for the top-paying jobs, I joined the job postings with the skills data, providing insights into what employers value for high-compensation roles.
+To see which skills the highest-paying roles require, i joined the job postings table witht eh skills data table. The result shows what employers value most in the top-compensation positions.
 
 ```sql
 
