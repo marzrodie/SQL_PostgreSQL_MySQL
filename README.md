@@ -9,7 +9,7 @@ Built following Luke Barousse's *SQL for Data Analytics* course. The dataset and
 - Python and Tableau pair high demand (236 and 230 salaried postings) with ~$100K average pay — the best balance of the two.
 - The best-paid "skills" in the data (SVN at $400K, Solidity at $179K) each come from a handful of postings and aren't a realistic target.
 
-📁 [SQL queries](/project_sql/)
+📁 [SQL queries](/SQL(PostgreSQL)/)
 
 # Background
 
@@ -28,7 +28,6 @@ This project examines the Data analyst job market to identify which skills pay t
 - **SQL:** Every query and insight below.
 - **PostgreSQL:** Database for the job postings data.
 - **Visual Studio Code:** Query editing and execution.
-- **Excel:** Charts, built from exported query results.
 - **Git & GitHub:** Version control and hosting.
 
 # The Analysis
@@ -38,7 +37,7 @@ Here is how i approached each question:
 
 ### 1. Top Paying Data Analyst jobs
 
-To find the highest paying roles, i filtered data analyst positions by average yearly salary and location, focusing on remote work. This query surfaces the most lucrative opportuities in the field.
+I filtered to remote data analyst postings with a listed salary, then sorted by average yearly salary to get the top 10.
 
 ```sql
 SELECT
@@ -69,11 +68,11 @@ Here is the breakdown of the top remote data analyst jobs in 2023:
 
 ![Top 10 highest paying remote jobs in Data Analysis](Assests/Top_10_highest_paying_remote_Data_Analyst_2.png)
 
-*Bar graph of the top ten salaries for Data analyst roles. Chart built in Excel from the query output*
+*Bar chart of the ten highest-paying remote data analyst roles in 2023, by average yearly salary.*
 
 ### 2. Skills for Top Paying Jobs
 
-To see which skills the highest-paying roles require, i joined the job postings table witht eh skills data table. The result shows what employers value most in the top-compensation positions.
+I joined the top 10 highest-paying jobs to the skills tables to see what those postings ask for.
 
 ```sql
 
@@ -106,21 +105,21 @@ ORDER BY
     salary_year_avg DESC
 
 ```
-Here is the breakdownof the most in-demand skilss across the ten highest-paying Data analyst jobs in 2023:
+Skills across the ten highest-paying remote data analyst jobs in 2023:
 
 1. **SQL** leads, appearing in 8 of the 10 postings.
 2. **Python** follows close behind at 7
 3. **Tableau** is also in string demend at 6.
 
-Other skills like R, Snowflake, Pandas, and Excel appear less frequently but still show up across the list.
+R, Snowflake, Pandas, and Excel appear in fewer postings but still make the list.
 
 ![Skills in the top paying Data Analyst jobs](Assests/Skills_in_demand.png)
 
-*Bar graph of skill counts across the ten highest-paying data analyst roles.*
+*Skill counts across the top 10 highest-paying remote data analyst roles, 2023.*
 
 ### 3. In-Demand Skills for Data Analysts
 
-This query counts the skills requested most often across remote data analyst postings, regardless of whether a salary was listed.
+This query counts how often each skill is requested across all remote data analyst postings, including those without a listed salary, and returns the top five.
 
 ```sql
 SELECT 
@@ -142,18 +141,18 @@ ORDER BY
     demand_count DESC
 LIMIT 5
 ```
-Here is the breakdown of the most in-demand skills for Data Analyst in 2023
+Top 5 in-demand skills:
 
 1. **SQL** and **Excel** remain fundamental, underlining the need for a strong foundation in data processing and spreadsheet work.
 2. **Python**, **Tableau**, and **Power BI** are close behind, reflecting the growing weight placed on technical skills in data storytelling and decision support.
 
 ![Top 5 skills in demand](Assests/Top_5_skills_in_demand_Table.png)
 
-*Demand for the top five skills across data analyst job postings*
+*Top 5 skills by posting count, remote data analyst roles, 2023.*
 
 ### 4. Skills Based on Salary
 
-Averaging salaries by skills reveals which skills command the highest pay.
+This query averages the yearly salary for each skill across remote data analyst postings with a listed salary, then ranks the top 25 to show which skills command the highest pay.
 
 ```sql
 SELECT 
@@ -177,7 +176,7 @@ ORDER BY
 LIMIT 25
 ```
 
-Here is the breakdown of the top-paying skillls for Data Analyst:
+Highest-paying skills:
 
 The top of this list is driven by tiny sample sizes — SVN ($400K) and Solidity ($179K) each appear in only 2 postings. The groupings below focus on skills with enough postings to mean something:
 
@@ -187,11 +186,11 @@ The top of this list is driven by tiny sample sizes — SVN ($400K) and Solidity
 
 ![Highest paying skills](Assests/Top_25_skills_in_demand_Table.png)
 
-*Table of the average salary for the top 10 paying skills for data analysts*
+*Top 25 skills by average salary.*
 
 ### 5. Most Optimal Skills to Learn
 
-Combining insights from demand and salary data, this query aimed to pinpoint skills that are both in high demand and have high salaries, offering a strategic focus for skills development.
+This query combines the demand and salary results to find skills that score high on both. To keep single-posting outliers out, it only includes skills that appear in more than 10 postings, then ranks the top 25 by average salary.
 
 
 ```sql
@@ -250,9 +249,9 @@ LIMIT 25;
 
 ![The top 25 skills to learn](Assests/Optimal_skills_demand_vs_pay.png)
 
-*Average salary for the top 25 paying skills for remote data analysts*
+*Top 25 skills by demand and salary.*
 
-Here’s a breakdown of the most optimal skills for Data Analysts in 2023:
+Optimal skills breakdown:
 
 1. **High-Demand Programming Languages:** Python and R stand out for their high demand, with demand counts of 236 and 148 respectively. Despite their high demand, their average salaries are around $101,397 for Python and $100,499 for R, indicating that proficiency in these languages is highly valued but also widely available.
 2. **Cloud Tools and Technologies:** Skills in specialized technologies such as Snowflake, Azure, AWS, and BigQuery show significant demand with relatively high average salaries, pointing towards the growing importance of cloud platforms and big data technologies in Data Analysis.
