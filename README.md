@@ -109,7 +109,7 @@ Skills across the ten highest-paying remote data analyst jobs in 2023:
 
 1. **SQL** leads, appearing in 8 of the 10 postings.
 2. **Python** follows close behind at 7
-3. **Tableau** is also in string demend at 6.
+3. **Tableau** is also in strong demand at 6.
 
 R, Snowflake, Pandas, and Excel appear in fewer postings but still make the list.
 
